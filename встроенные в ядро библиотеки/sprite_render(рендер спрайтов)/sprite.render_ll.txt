@@ -1,7 +1,7 @@
-label. #main /<- изменяемые параметры
-ramw. "c" &10 [1, 1, 2, 2, 3, 3, 58]
+label. #main /<- изменяемые параметры -> r1 = начальный адрес спрайта, содержимое спрайта 
+ramw. "c" &10 [1, 1, 2, 2, 3, 3, 58] / удалить при компиляции 
 section. parent
-assig. r1 '10' / начальный адрес
+assig. r1 '10' / начальный адрес / удалить при компиляции
 transf. r1 r3 значение тек.
 assig. r4 '1' /curr x coof
 assig. r5 '1' /curr y coof
@@ -11,19 +11,15 @@ assig. r8 '0' y out
     label. #LOOP
     xcord. block
         raml. "m" r6 r3
-        out. "r" r6 P5
         if. r6 $ '58' #end
         math. r6 + r4 r7
         out. "r" r7 P1
-        out. "r" r7 P5
     ycord. block
         math. "i" r3 '1'
         raml. "m" r6 r3
-        out. "r" r6 P5
         if. r6 $ '58' #end
         math. r6 + r5 r8
         out. "r" r8 P2
-        out. "r" r8 P5
         math. "i" r3 '1'
     outpt. block
         out. "n" '4' P3
