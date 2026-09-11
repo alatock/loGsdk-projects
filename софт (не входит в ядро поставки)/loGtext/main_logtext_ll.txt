@@ -24,7 +24,7 @@ label. #main
         ramw. "c" &10 [114, 101, 97, 100, 105, 110, 103, 32, 116, 101, 120, 116, 58, 3]
         assig. r2 '10'
         global. "text_out_cl.txt"
-        assig. "r" r2 '50'
+        assig.  r2 '50'
         transf. r5 r1
         global. "text_out_cl.txt"
         go. #init
